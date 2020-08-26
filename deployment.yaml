@@ -18,7 +18,7 @@ spec:
            - containerPort: 5000
            volumeMounts:
            - name: name-volume
-           mountPath: /opt/config
+             mountPath: /opt/config
         volumes:
         -  name: name-volume
            configMap:
