@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:alpine3.7
 
 WORKDIR /usr/src/app
 
@@ -7,5 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "-m flask run" ]
+CMD [ "python", "app.py" ]
 EXPOSE 5000
