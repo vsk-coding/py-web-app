@@ -19,7 +19,7 @@ spec:
            volumeMounts:
            - name: name-volume
              mountPath: /opt/config
-        volumes:
-        -  name: name-volume
-           configMap:
-             name: my-name
+         volumes:
+         - name: name-volume
+            configMap:
+              name: my-name
