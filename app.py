@@ -1,10 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template 
+import os.path
 
 app= Flask(__name__)
 
 
-name=[]
-with open 
 @app.route("/")
 def index():
-    return "Hi ! Welcome"
+    with open("\\opt\\config\\myname", "r") as f: 
+        content = f.read()
+    return render_template('index.html', content = content)
