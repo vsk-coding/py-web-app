@@ -16,6 +16,7 @@ spec:
            image: docker.io/vishnusk/py-demo:latest
            ports:
            - containerPort: 5000
+             hostPort: 8081
            volumeMounts:
            - name: name-volume
              mountPath: /opt/config
