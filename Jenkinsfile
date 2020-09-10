@@ -55,7 +55,7 @@ pipeline {
     
     post {
         always {
-            archiveArtifacts artifacts: '*-results.log', followSymlinks: false 
+            archiveArtifacts artifacts: '*-result.log', followSymlinks: false 
         }
     }
 }
