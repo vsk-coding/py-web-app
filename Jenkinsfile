@@ -1,6 +1,19 @@
 pipeline {
     agent any
     stages {
+        
+        stage("Dockerfile lint") {
+            agent {
+                docker {
+                    image "docker.io/hadolint/hadolint"
+                    reuseNode true
+                }                
+            }
+            steps {
+                sh label: 'hadolint Dockerfile check', script: 'hadolint Dockerfile > hadolint-result.log'
+            }
+        }
+        
         stage("Build image") {
             steps {
                 script {
