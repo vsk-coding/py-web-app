@@ -47,9 +47,15 @@ pipeline {
         stage("clean up") {
             steps {
                 sleep(30) 
-                sh 'kubectl delete deployment web-app'
-                sh 'kubectl delete svc web-service'
+                sh 'kubectl delete deployment flask-app'
+                sh 'kubectl delete svc flask-service'
             }
         }
     }    
+    
+    post {
+        always {
+            archiveArtifacts artifacts: '*-results.log', followSymlinks: false 
+        }
+    }
 }
